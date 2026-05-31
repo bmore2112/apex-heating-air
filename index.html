@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<!--
+  Apex Heating & Air — Visual direction: Industrial precision / engineered trust.
+  Near-black charcoal base + cool steel grays + crisp white chapters, single safety-orange accent reserved for CTAs/highlights.
+  Display: Archivo (800-900, expanded weight) over Manrope body. Blueprint grid texture, bold numerics, fast-response tone.
+  Motion: GSAP scroll reveals + stagger, animated stat counters, pinned 3-step "how it works"; all guarded behind prefers-reduced-motion.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Apex Heating &amp; Air | HVAC Repair, Install &amp; 24/7 Emergency Service</title>
+<meta name="description" content="Apex Heating & Air — licensed, NATE-certified HVAC technicians for AC repair, furnace install, indoor air quality, and 24/7 emergency service. Upfront pricing, same-day fixes." />
+<meta property="og:title" content="Apex Heating & Air | Engineered Comfort, Fast Response" />
+<meta property="og:description" content="Same-day HVAC repair and install with upfront pricing and a satisfaction guarantee." />
+<meta property="og:image" content="https://picsum.photos/seed/apexhvac/1200/630" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          charcoal: '#0E1116',
+          steel: {
+            50: '#F4F6F8',
+            100: '#E6EAEF',
+            200: '#C9D1DA',
+            300: '#A4B0BD',
+            400: '#76828F',
+            500: '#525C66',
+            600: '#3A424B',
+            700: '#272D34',
+            800: '#191E24',
+            900: '#11151A',
+          },
+          safety: '#FF6A00',
+          safetyDim: '#C44E00',
+        },
+        fontFamily: {
+          display: ['Archivo', 'system-ui', 'sans-serif'],
+          body: ['Manrope', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color: #0E1116; }
+  ::selection { background: #FF6A00; color: #fff; }
+
+  .font-stretch-display {
+    font-family: 'Archivo', sans-serif;
+    font-stretch: 125%;
+    letter-spacing: -0.02em;
+  }
+
+  /* Blueprint grid texture */
+  .blueprint {
+    background-image:
+      linear-gradient(rgba(118,130,143,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(118,130,143,0.08) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .blueprint-fine {
+    background-image:
+      linear-gradient(rgba(14,17,22,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(14,17,22,0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .img-treat {
+    filter: grayscale(35%) contrast(1.08) brightness(0.82);
+  }
+  .duotone {
+    filter: grayscale(100%) contrast(1.15) brightness(0.7);
+  }
+
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  .focus-ring:focus-visible {
+    outline: 3px solid #FF6A00;
+    outline-offset: 3px;
+  }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid #FF6A00;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .card-media { transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+  .card-hover:hover .card-media { transform: scale(1.06); }
+
+  .nav-glass {
+    background: rgba(14,17,22,0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .reveal { opacity: 0; transform: translateY(28px); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .card-media { transition: none; }
+  }
+</style>
+</head>
+<body class="font-body bg-charcoal text-steel-100 overflow-x-hidden antialiased">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-3 focus:left-3 focus:bg-safety focus:text-white focus:px-4 focus:py-2 focus:rounded">Skip to main content</a>
+
+<!-- Emergency banner -->
+<div class="bg-safety text-white text-sm font-semibold">
+  <div class="mx-auto max-w-7xl px-4 py-2 flex items-center justify-center gap-2 text-center">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+    <span>No heat or no cooling? 24/7 emergency dispatch — <a href="tel:+13128471928" class="underline underline-offset-2 hover:text-charcoal transition-colors">call (312) 847-1928</a></span>
+  </div>
+</div>
+
+<!-- Sticky nav -->
+<header id="site-nav" class="sticky top-0 z-50 nav-glass border-b border-steel-700/60">
+  <nav aria-label="Main navigation" class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="flex items-center justify-between h-[68px]">
+      <a href="#top" class="flex items-center gap-2.5 shrink-0" aria-label="Apex Heating and Air home">
+        <span class="grid place-items-center w-9 h-9 bg-safety rounded-sm" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m3 20 9-15 9 15"/><path d="M8 20h8"/></svg>
+        </span>
+        <span class="font-display font-extrabold text-lg tracking-tight text-white leading-none">APEX<span class="text-safety">.</span><span class="hidden sm:inline text-steel-300 font-bold"> Heating &amp; Air</span></span>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8 text-sm font-semibold text-steel-200">
+        <a href="#services" class="hover:text-white transition-colors">Services</a>
+        <a href="#why" class="hover:text-white transition-colors">Why Apex</a>
+        <a href="#process" class="hover:text-white transition-colors">How It Works</a>
+        <a href="#reviews" class="hover:text-white transition-colors">Reviews</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="tel:+13128471928" class="hidden md:flex items-center gap-2 text-sm font-bold text-white hover:text-safety transition-colors min-h-[44px] px-2" aria-label="Call Apex Heating and Air at 312 847 1928">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="tabular">(312) 847-1928</span>
+        </a>
+        <a href="#quote" class="inline-flex items-center min-h-[44px] px-4 sm:px-5 bg-safety hover:bg-safetyDim text-white text-sm font-bold rounded-sm transition-colors">Get a Quote</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section id="top" class="relative isolate overflow-hidden bg-charcoal">
+    <div class="absolute inset-0 -z-10">
+      <img src="https://picsum.photos/seed/hvactechnician/1920/1280" alt="" width="1920" height="1280" class="w-full h-full object-cover img-treat" />
+      <div class="absolute inset-0 bg-gradient-to-b from-charcoal/70 via-charcoal/85 to-charcoal"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/55 to-transparent"></div>
+    </div>
+    <div class="absolute inset-0 -z-10 blueprint opacity-50"></div>
+
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 pt-24 pb-28 md:pt-36 md:pb-44">
+      <div class="max-w-6xl">
+        <p class="reveal text-safety font-bold uppercase tracking-[0.22em] text-xs sm:text-sm mb-6">Licensed HVAC · Serving Greater Chicago</p>
+        <h1 class="reveal font-display font-black text-white leading-[0.98] tracking-tight" style="font-size:clamp(2.5rem,5vw,5.5rem)">
+          Comfort you can count on,
+          <span class="text-safety">fixed the same day.</span>
+        </h1>
+        <p class="reveal mt-7 max-w-xl text-base sm:text-lg text-steel-200 leading-relaxed">
+          When the heat dies in January or the AC quits in July, you need a crew that shows up fast and gets it right the first time. Honest diagnostics, upfront pricing, and technicians who treat your home like their own.
+        </p>
+        <div class="reveal mt-9 flex flex-col sm:flex-row gap-4">
+          <a href="#quote" class="inline-flex items-center justify-center min-h-[52px] px-7 bg-safety hover:bg-safetyDim text-white text-base font-bold rounded-sm transition-colors">
+            Get a Free Estimate
+          </a>
+          <a href="tel:+13128471928" class="inline-flex items-center justify-center gap-2 min-h-[52px] px-7 bg-white hover:bg-steel-100 text-charcoal text-base font-bold rounded-sm transition-colors">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call (312) 847-1928
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES (bento) -->
+  <section id="services" class="relative bg-steel-900 py-24 md:py-40">
+    <div class="absolute inset-0 blueprint opacity-40 pointer-events-none"></div>
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="max-w-3xl mb-14 md:mb-20">
+        <h2 class="reveal font-display font-extrabold text-white leading-tight tracking-tight" style="font-size:clamp(2rem,3.5vw,3.25rem)">Full-system service, one accountable crew.</h2>
+        <p class="reveal mt-5 text-steel-300 text-lg leading-relaxed max-w-xl">From a noisy condenser to a brand-new high-efficiency furnace, we handle the whole envelope — repair, replace, and keep it running.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[200px] gap-3 grid-flow-dense">
+
+        <!-- AC repair & install (large feature) -->
+        <article class="card-hover group relative lg:col-span-2 lg:row-span-2 rounded-md overflow-hidden bg-steel-800 border border-steel-700">
+          <div class="absolute inset-0">
+            <img src="https://picsum.photos/seed/aircondenser/900/900" alt="Outdoor AC condenser unit beside a home" width="900" height="900" loading="lazy" class="card-media w-full h-full object-cover duotone opacity-60" />
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-transparent"></div>
+          </div>
+          <div class="relative h-full p-7 flex flex-col justify-between">
+            <span class="grid place-items-center w-12 h-12 bg-safety rounded-sm" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12 4.5 7.5"/><path d="m12 12 7.5-4.5"/><path d="M12 12v9"/><circle cx="12" cy="12" r="10"/><path d="M12 3a9 9 0 0 0 0 18"/></svg>
+            </span>
+            <div>
+              <h3 class="font-display font-bold text-2xl text-white">AC Repair &amp; Installation</h3>
+              <p class="mt-2 text-steel-200 leading-relaxed max-w-md">Refrigerant leaks, frozen coils, dead compressors — diagnosed fast. New systems sized correctly with a Manual J load calc, not a guess.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Heating / furnace -->
+        <article class="card-hover group relative rounded-md overflow-hidden bg-steel-800 border border-steel-700 p-6 flex flex-col justify-between">
+          <span class="grid place-items-center w-11 h-11 bg-steel-700 rounded-sm text-safety" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+          </span>
+          <div>
+            <h3 class="font-display font-bold text-xl text-white">Heating &amp; Furnaces</h3>
+            <p class="mt-2 text-sm text-steel-300 leading-relaxed">Gas, electric, and heat pump systems. Ignition faults, cracked heat exchangers, and full furnace swaps.</p>
+          </div>
+        </article>
+
+        <!-- Indoor air quality -->
+        <article class="card-hover group relative rounded-md overflow-hidden bg-steel-800 border border-steel-700 p-6 flex flex-col justify-between">
+          <span class="grid place-items-center w-11 h-11 bg-steel-700 rounded-sm text-safety" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.8 19.6A2 2 0 1 0 14 16H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/></svg>
+          </span>
+          <div>
+            <h3 class="font-display font-bold text-xl text-white">Indoor Air Quality</h3>
+            <p class="mt-2 text-sm text-steel-300 leading-relaxed">Whole-home filtration, humidifiers, and UV purification. Breathe easier through allergy season.</p>
+          </div>
+        </article>
+
+        <!-- Emergency (wide accent) -->
+        <article class="card-hover group relative sm:col-span-2 rounded-md overflow-hidden bg-safety border border-safety p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-start gap-4">
+            <span class="grid place-items-center w-11 h-11 bg-white/20 rounded-sm text-white shrink-0" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </span>
+            <div>
+              <h3 class="font-display font-bold text-xl text-white">24/7 Emergency Service</h3>
+              <p class="mt-1.5 text-sm text-white/90 leading-relaxed max-w-md">A live dispatcher every hour of every day. Holidays and 3 a.m. included.</p>
+            </div>
+          </div>
+          <a href="tel:+13128471928" class="shrink-0 inline-flex items-center justify-center min-h-[44px] px-5 bg-charcoal text-white text-sm font-bold rounded-sm hover:bg-steel-800 transition-colors">Call now</a>
+        </article>
+
+        <!-- Maintenance plans -->
+        <article class="card-hover group relative rounded-md overflow-hidden bg-steel-800 border border-steel-700 p-6 flex flex-col justify-between">
+          <span class="grid place-items-center w-11 h-11 bg-steel-700 rounded-sm text-safety" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </span>
+          <div>
+            <h3 class="font-display font-bold text-xl text-white">Maintenance Plans</h3>
+            <p class="mt-2 text-sm text-steel-300 leading-relaxed">Two seasonal tune-ups a year, priority scheduling, and 15% off repairs. From $14/mo.</p>
+          </div>
+        </article>
+
+        <!-- Financing -->
+        <article class="card-hover group relative rounded-md overflow-hidden bg-steel-800 border border-steel-700 p-6 flex flex-col justify-between">
+          <span class="grid place-items-center w-11 h-11 bg-steel-700 rounded-sm text-safety" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          </span>
+          <div>
+            <h3 class="font-display font-bold text-xl text-white">Flexible Financing</h3>
+            <p class="mt-2 text-sm text-steel-300 leading-relaxed">0% APR for qualified buyers on new systems. Approval in minutes, no surprises.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY / ABOUT (light chapter) -->
+  <section id="why" class="relative bg-steel-50 text-charcoal py-24 md:py-40">
+    <div class="absolute inset-0 blueprint-fine opacity-70 pointer-events-none"></div>
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <div class="relative">
+          <div class="relative rounded-md overflow-hidden border border-steel-200 card-hover group">
+            <img src="https://picsum.photos/seed/hvaccrewvan/1000/1100" alt="Apex technician walking to a service van outside a residential home" width="1000" height="1100" loading="lazy" class="card-media w-full h-[460px] sm:h-[560px] object-cover" />
+          </div>
+          <div class="absolute -bottom-6 -right-2 sm:right-6 bg-charcoal text-white rounded-md px-6 py-5 shadow-2xl max-w-[230px]">
+            <p class="font-display font-black text-4xl tabular leading-none">100%</p>
+            <p class="mt-1.5 text-sm text-steel-300 leading-snug">Satisfaction guarantee on every job, in writing.</p>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="reveal font-display font-extrabold leading-tight tracking-tight" style="font-size:clamp(2rem,3.5vw,3.25rem)">Built on doing it right, not doing it fast.</h2>
+          <p class="reveal mt-5 text-steel-600 text-lg leading-relaxed">We started Apex because too many neighbors were getting upsold on equipment they didn't need. Our techs are paid to diagnose, not to sell. That changes everything.</p>
+
+          <dl class="reveal mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-7">
+            <div class="flex gap-3.5">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF6A00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+              <div>
+                <dt class="font-display font-bold text-lg">Licensed &amp; insured</dt>
+                <dd class="mt-1 text-sm text-steel-500 leading-relaxed">Fully bonded with $2M liability coverage. Permits pulled on every install.</dd>
+              </div>
+            </div>
+            <div class="flex gap-3.5">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF6A00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              <div>
+                <dt class="font-display font-bold text-lg">NATE-certified techs</dt>
+                <dd class="mt-1 text-sm text-steel-500 leading-relaxed">Every technician carries North American Technician Excellence credentials.</dd>
+              </div>
+            </div>
+            <div class="flex gap-3.5">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF6A00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5" aria-hidden="true"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <div>
+                <dt class="font-display font-bold text-lg">Upfront flat pricing</dt>
+                <dd class="mt-1 text-sm text-steel-500 leading-relaxed">You approve the price before we lift a wrench. No hourly meter running.</dd>
+              </div>
+            </div>
+            <div class="flex gap-3.5">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF6A00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5" aria-hidden="true"><path d="m9 11-6 6v3h9l3-3"/><path d="m22 12-4.6 4.6a2 2 0 0 1-2.8 0l-5.2-5.2a2 2 0 0 1 0-2.8L14 4"/></svg>
+              <div>
+                <dt class="font-display font-bold text-lg">Clean job sites</dt>
+                <dd class="mt-1 text-sm text-steel-500 leading-relaxed">Drop cloths down, shoe covers on, debris hauled out. Like we were never there.</dd>
+              </div>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE: pinned how-it-works + counters -->
+  <section id="process" class="relative bg-charcoal">
+    <!-- Pinned 3-step -->
+    <div id="pin-wrap" class="relative">
+      <div class="absolute inset-0 blueprint opacity-30 pointer-events-none"></div>
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 py-24 md:py-32">
+        <div class="max-w-3xl mb-12">
+          <h2 class="reveal font-display font-extrabold text-white leading-tight tracking-tight" style="font-size:clamp(2rem,3.5vw,3.25rem)">Three steps. Most jobs done today.</h2>
+          <p class="reveal mt-5 text-steel-300 text-lg leading-relaxed">No phone-tag, no week-long waits. Here is exactly how a call to Apex goes.</p>
+        </div>
+
+        <div id="steps" class="grid md:grid-cols-3 gap-4">
+          <article data-step class="relative rounded-md border border-steel-700 bg-steel-900 p-7 overflow-hidden">
+            <div class="absolute top-5 right-6 font-display font-black text-7xl text-steel-800 select-none tabular" aria-hidden="true">01</div>
+            <span class="relative grid place-items-center w-12 h-12 bg-safety rounded-sm" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <h3 class="relative mt-5 font-display font-bold text-2xl text-white">Call</h3>
+            <p class="relative mt-2.5 text-steel-300 leading-relaxed">Talk to a real dispatcher in under a minute. We lock in a same-day window that works for you.</p>
+          </article>
+
+          <article data-step class="relative rounded-md border border-steel-700 bg-steel-900 p-7 overflow-hidden">
+            <div class="absolute top-5 right-6 font-display font-black text-7xl text-steel-800 select-none tabular" aria-hidden="true">02</div>
+            <span class="relative grid place-items-center w-12 h-12 bg-safety rounded-sm" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </span>
+            <h3 class="relative mt-5 font-display font-bold text-2xl text-white">Diagnose</h3>
+            <p class="relative mt-2.5 text-steel-300 leading-relaxed">A NATE-certified tech inspects the full system, explains the root cause, and hands you a flat-rate price to approve.</p>
+          </article>
+
+          <article data-step class="relative rounded-md border border-steel-700 bg-steel-900 p-7 overflow-hidden">
+            <div class="absolute top-5 right-6 font-display font-black text-7xl text-steel-800 select-none tabular" aria-hidden="true">03</div>
+            <span class="relative grid place-items-center w-12 h-12 bg-safety rounded-sm" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </span>
+            <h3 class="relative mt-5 font-display font-bold text-2xl text-white">Fix — same-day</h3>
+            <p class="relative mt-2.5 text-steel-300 leading-relaxed">Trucks stocked with common parts mean most repairs finish on the first visit. We test it cold and warm before we leave.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <!-- Counters -->
+    <div class="border-t border-steel-700 bg-steel-900">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 py-20 md:py-28">
+        <div id="stats" class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
+          <div class="reveal border-l-2 border-safety pl-5">
+            <p class="font-display font-black text-white tabular leading-none" style="font-size:clamp(2.75rem,5vw,4.5rem)"><span class="count" data-target="18">0</span></p>
+            <p class="mt-2 text-sm font-semibold uppercase tracking-wider text-steel-400">Years in business</p>
+          </div>
+          <div class="reveal border-l-2 border-safety pl-5">
+            <p class="font-display font-black text-white tabular leading-none" style="font-size:clamp(2.75rem,5vw,4.5rem)"><span class="count" data-target="32" data-suffix="K+">0</span></p>
+            <p class="mt-2 text-sm font-semibold uppercase tracking-wider text-steel-400">Jobs completed</p>
+          </div>
+          <div class="reveal border-l-2 border-safety pl-5">
+            <p class="font-display font-black text-white tabular leading-none" style="font-size:clamp(2.75rem,5vw,4.5rem)"><span class="count" data-target="47" data-prefix="" data-suffix=" min">0</span></p>
+            <p class="mt-2 text-sm font-semibold uppercase tracking-wider text-steel-400">Avg. response time</p>
+          </div>
+          <div class="reveal border-l-2 border-safety pl-5">
+            <p class="font-display font-black text-white tabular leading-none" style="font-size:clamp(2.75rem,5vw,4.5rem)"><span class="count" data-target="49" data-decimals="1" data-divide="10">0</span></p>
+            <p class="mt-2 text-sm font-semibold uppercase tracking-wider text-steel-400">Star rating · 2,100+ reviews</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="relative bg-steel-50 text-charcoal py-24 md:py-40">
+    <div class="absolute inset-0 blueprint-fine opacity-60 pointer-events-none"></div>
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="max-w-3xl mb-14 md:mb-20">
+        <h2 class="reveal font-display font-extrabold leading-tight tracking-tight" style="font-size:clamp(2rem,3.5vw,3.25rem)">Neighbors who stopped calling anyone else.</h2>
+        <p class="reveal mt-5 text-steel-600 text-lg leading-relaxed">Real reviews from real homes across the city.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <figure class="reveal bg-white rounded-md border border-steel-200 p-7 flex flex-col">
+          <div class="flex gap-1 text-safety mb-4" aria-label="5 out of 5 stars">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          </div>
+          <blockquote class="text-steel-700 leading-relaxed flex-1">"Furnace quit at 11pm in a cold snap. I expected to wait days. Apex had Marcus at my door by 6:40 the next morning and heat back on before breakfast. He even showed me the cracked igniter."</blockquote>
+          <figcaption class="mt-6 pt-5 border-t border-steel-100 flex items-center gap-3">
+            <span class="grid place-items-center w-10 h-10 rounded-full bg-charcoal text-white font-display font-bold text-sm" aria-hidden="true">DR</span>
+            <div>
+              <p class="font-bold text-sm">Denise R.</p>
+              <p class="text-xs text-steel-500">Logan Square</p>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="reveal bg-white rounded-md border border-steel-200 p-7 flex flex-col">
+          <div class="flex gap-1 text-safety mb-4" aria-label="5 out of 5 stars">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          </div>
+          <blockquote class="text-steel-700 leading-relaxed flex-1">"Got three quotes for a new AC. Two tried to sell me a bigger unit than my house needs. Apex did an actual load calc and saved me about $1,400. Install crew was spotless."</blockquote>
+          <figcaption class="mt-6 pt-5 border-t border-steel-100 flex items-center gap-3">
+            <span class="grid place-items-center w-10 h-10 rounded-full bg-charcoal text-white font-display font-bold text-sm" aria-hidden="true">AT</span>
+            <div>
+              <p class="font-bold text-sm">Anthony T.</p>
+              <p class="text-xs text-steel-500">Oak Park</p>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="reveal bg-white rounded-md border border-steel-200 p-7 flex flex-col">
+          <div class="flex gap-1 text-safety mb-4" aria-label="5 out of 5 stars">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          </div>
+          <blockquote class="text-steel-700 leading-relaxed flex-1">"We're on the maintenance plan now. They caught a failing capacitor during the spring tune-up before it left us without AC in July. Worth every penny of the membership."</blockquote>
+          <figcaption class="mt-6 pt-5 border-t border-steel-100 flex items-center gap-3">
+            <span class="grid place-items-center w-10 h-10 rounded-full bg-charcoal text-white font-display font-bold text-sm" aria-hidden="true">PV</span>
+            <div>
+              <p class="font-bold text-sm">Priya V.</p>
+              <p class="text-xs text-steel-500">Evanston</p>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="quote" class="relative isolate overflow-hidden bg-charcoal py-24 md:py-36">
+    <div class="absolute inset-0 -z-10">
+      <img src="https://picsum.photos/seed/furnaceroom/1920/1080" alt="" width="1920" height="1080" loading="lazy" class="w-full h-full object-cover duotone opacity-30" />
+      <div class="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/90 to-charcoal/70"></div>
+    </div>
+    <div class="absolute inset-0 -z-10 blueprint opacity-40 pointer-events-none"></div>
+
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <h2 class="reveal font-display font-black text-white leading-[1.02] tracking-tight" style="font-size:clamp(2.25rem,4.5vw,4rem)">Comfortable home. <span class="text-safety">No runaround.</span></h2>
+          <p class="reveal mt-5 text-steel-300 text-lg leading-relaxed max-w-lg">Tell us what's going on and we'll give you a free, honest estimate. Or skip the form and talk to a dispatcher right now.</p>
+          <div class="reveal mt-8 flex flex-col sm:flex-row gap-4">
+            <a href="tel:+13128471928" class="inline-flex items-center justify-center gap-2 min-h-[52px] px-7 bg-safety hover:bg-safetyDim text-white text-base font-bold rounded-sm transition-colors">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Call (312) 847-1928
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <form class="bg-steel-900/90 backdrop-blur border border-steel-700 rounded-md p-6 sm:p-8" novalidate>
+            <h3 class="font-display font-bold text-xl text-white mb-5">Request a free estimate</h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="f-name" class="block text-sm font-semibold text-steel-300 mb-1.5">Full name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required class="focus-ring w-full min-h-[44px] px-3.5 rounded-sm bg-steel-800 border border-steel-600 text-white placeholder-steel-500 focus:border-safety" placeholder="Jordan Mills" />
+              </div>
+              <div>
+                <label for="f-phone" class="block text-sm font-semibold text-steel-300 mb-1.5">Phone</label>
+                <input id="f-phone" name="phone" type="tel" autocomplete="tel" required class="focus-ring w-full min-h-[44px] px-3.5 rounded-sm bg-steel-800 border border-steel-600 text-white placeholder-steel-500 focus:border-safety" placeholder="(312) 555-0142" />
+              </div>
+            </div>
+            <div class="mt-4">
+              <label for="f-service" class="block text-sm font-semibold text-steel-300 mb-1.5">What do you need?</label>
+              <select id="f-service" name="service" class="focus-ring w-full min-h-[44px] px-3.5 rounded-sm bg-steel-800 border border-steel-600 text-white focus:border-safety">
+                <option>AC repair or install</option>
+                <option>Heating / furnace</option>
+                <option>Indoor air quality</option>
+                <option>Maintenance plan</option>
+                <option>Emergency — no heat / no cool</option>
+              </select>
+            </div>
+            <div class="mt-4">
+              <label for="f-notes" class="block text-sm font-semibold text-steel-300 mb-1.5">Details <span class="text-steel-500 font-normal">(optional)</span></label>
+              <textarea id="f-notes" name="notes" rows="3" class="focus-ring w-full px-3.5 py-2.5 rounded-sm bg-steel-800 border border-steel-600 text-white placeholder-steel-500 focus:border-safety resize-none" placeholder="Upstairs unit is blowing warm air, started yesterday."></textarea>
+            </div>
+            <button type="submit" class="mt-6 w-full inline-flex items-center justify-center min-h-[52px] px-6 bg-safety hover:bg-safetyDim text-white text-base font-bold rounded-sm transition-colors">
+              Get my free estimate
+            </button>
+            <p class="mt-3 text-xs text-steel-500 text-center">We respond within the hour during business hours. No spam, ever.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-steel-900 border-t border-steel-700 text-steel-300">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 py-16">
+    <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-2.5 mb-4">
+          <span class="grid place-items-center w-9 h-9 bg-safety rounded-sm" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m3 20 9-15 9 15"/><path d="M8 20h8"/></svg>
+          </span>
+          <span class="font-display font-extrabold text-lg text-white">APEX<span class="text-safety">.</span></span>
+        </div>
+        <p class="text-sm leading-relaxed text-steel-400 max-w-xs">Engineered comfort and honest HVAC service for greater Chicago since 2008.</p>
+        <div class="flex gap-3 mt-5">
+          <a href="#" aria-label="Apex on Facebook" class="grid place-items-center w-10 h-10 rounded-sm bg-steel-800 hover:bg-safety hover:text-white transition-colors">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Apex on Instagram" class="grid place-items-center w-10 h-10 rounded-sm bg-steel-800 hover:bg-safety hover:text-white transition-colors">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Apex on Google Reviews" class="grid place-items-center w-10 h-10 rounded-sm bg-steel-800 hover:bg-safety hover:text-white transition-colors">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Contact</h3>
+        <address class="not-italic text-sm space-y-3 text-steel-400">
+          <p>Apex Heating &amp; Air<br />2840 W Belmont Ave, Suite 4<br />Chicago, IL 60618</p>
+          <p><a href="tel:+13128471928" class="hover:text-safety transition-colors tabular font-semibold text-steel-200">(312) 847-1928</a></p>
+          <p><a href="mailto:service@apexheatingair.com" class="hover:text-safety transition-colors">service@apexheatingair.com</a></p>
+        </address>
+      </div>
+
+      <div>
+        <h3 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Hours</h3>
+        <ul class="text-sm space-y-2 text-steel-400">
+          <li class="flex justify-between gap-4"><span>Mon–Fri</span><span class="tabular text-steel-200">7am – 7pm</span></li>
+          <li class="flex justify-between gap-4"><span>Saturday</span><span class="tabular text-steel-200">8am – 5pm</span></li>
+          <li class="flex justify-between gap-4"><span>Sunday</span><span class="tabular text-steel-200">Closed</span></li>
+          <li class="flex justify-between gap-4 pt-2 border-t border-steel-700 mt-2"><span class="text-safety font-bold">Emergency</span><span class="tabular text-safety font-bold">24 / 7</span></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Service Areas</h3>
+        <ul class="text-sm space-y-2 text-steel-400">
+          <li>Chicago &amp; North Side</li>
+          <li>Oak Park · Evanston</li>
+          <li>Logan Square · Avondale</li>
+          <li>Skokie · Cicero · Berwyn</li>
+        </ul>
+        <nav aria-label="Footer navigation" class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+          <a href="#services" class="hover:text-safety transition-colors">Services</a>
+          <a href="#why" class="hover:text-safety transition-colors">Why Apex</a>
+          <a href="#reviews" class="hover:text-safety transition-colors">Reviews</a>
+          <a href="#quote" class="hover:text-safety transition-colors">Get a Quote</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-7 border-t border-steel-700 flex flex-col sm:flex-row justify-between gap-4 text-xs text-steel-500">
+      <p>© 2026 Apex Heating &amp; Air, LLC. IL License #055-044981. All rights reserved.</p>
+      <div class="flex gap-5">
+        <a href="#" class="hover:text-steel-300 transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-steel-300 transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function () {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Static count helper for reduced motion / no-GSAP fallback
+  function setFinal(el) {
+    const target = parseFloat(el.dataset.target);
+    const decimals = parseInt(el.dataset.decimals || '0', 10);
+    const divide = parseFloat(el.dataset.divide || '1');
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    el.textContent = prefix + (target / divide).toFixed(decimals) + suffix;
+  }
+
+  if (reduceMotion || typeof gsap === 'undefined') {
+    document.querySelectorAll('.count').forEach(setFinal);
+    document.querySelectorAll('.reveal').forEach(function (el) { el.style.opacity = 1; el.style.transform = 'none'; });
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Scroll reveals with stagger (grouped by section)
+  gsap.utils.toArray('section, footer').forEach(function (section) {
+    const items = section.querySelectorAll('.reveal');
+    if (!items.length) return;
+    gsap.to(items, {
+      opacity: 1,
+      y: 0,
+      duration: 0.7,
+      ease: 'power3.out',
+      stagger: 0.09,
+      scrollTrigger: { trigger: section, start: 'top 78%' }
+    });
+  });
+
+  // Animated stat counters
+  document.querySelectorAll('.count').forEach(function (el) {
+    const target = parseFloat(el.dataset.target);
+    const decimals = parseInt(el.dataset.decimals || '0', 10);
+    const divide = parseFloat(el.dataset.divide || '1');
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    const obj = { v: 0 };
+    gsap.to(obj, {
+      v: target,
+      duration: 1.8,
+      ease: 'power2.out',
+      scrollTrigger: { trigger: el, start: 'top 90%', once: true },
+      onUpdate: function () {
+        el.textContent = prefix + (obj.v / divide).toFixed(decimals) + suffix;
+      }
+    });
+  });
+
+  // Signature pinned 3-step (desktop only — avoids mobile scroll trap)
+  const mm = gsap.matchMedia();
+  mm.add('(min-width: 768px)', function () {
+    const steps = gsap.utils.toArray('#steps [data-step]');
+    gsap.set(steps, { opacity: 0.32, y: 18 });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#pin-wrap',
+        start: 'top top',
+        end: '+=1400',
+        pin: true,
+        scrub: 0.6
+      }
+    });
+
+    steps.forEach(function (step) {
+      tl.to(step, { opacity: 1, y: 0, duration: 1, ease: 'power2.out' })
+        .to({}, { duration: 0.6 });
+    });
+  });
+
+  // Nav shadow on scroll
+  const nav = document.getElementById('site-nav');
+  ScrollTrigger.create({
+    start: 'top -80',
+    end: 99999,
+    onUpdate: function (self) {
+      nav.classList.toggle('shadow-2xl', self.scroll() > 80);
+    }
+  });
+
+  // Form submit feedback (no backend)
+  const form = document.querySelector('#quote form');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      btn.textContent = 'Request sent — we’ll call you shortly';
+      btn.disabled = true;
+      btn.classList.add('opacity-90', 'cursor-default');
+    });
+  }
+})();
+</script>
+</body>
+</html>
